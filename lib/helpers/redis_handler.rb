@@ -1,5 +1,4 @@
 module RedisHandler
-  include ArtistInfo
 
   def get_set_artist(name)
     unless cached_artist = $redis.get(name)
