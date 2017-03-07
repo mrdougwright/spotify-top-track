@@ -15,7 +15,7 @@ class ArtistInfoTest < Minitest::Test
 
   def test_decorate_artist_data
     decorated_artist = {
-      :name=>"Rich Chigga", :track=>"Dat $tick", :image_url=>nil, :popularity=>nil, :genres=>nil, :followers=>12345, :related=>[], :spotify_link=>"a link"
+      :name=>"Rich Chigga", :track=>"Dat $tick", :image_url=>nil, :popularity=>nil, :genres=>[], :followers=>12345, :related=>[], :spotify_link=>"a link"
     }
     artist = decorate_artist_data(@artist, @track)
     assert_equal decorated_artist, artist
