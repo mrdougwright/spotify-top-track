@@ -9,8 +9,7 @@ class TwilioApi
       ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
   end
 
-# body = "#{artist.name}'s top track: #{track.name}"
-  def send_message(from=DEFAULT_FROM, to, body)
+  def send_message(to, body, from=DEFAULT_FROM)
     client.account.messages.create({
       :from => from, :to => to,
       :body => body
