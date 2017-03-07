@@ -15,5 +15,6 @@ class TwilioApi
       :body => body
       })
     puts "Texted #{to}"
+    return true
   end
 end

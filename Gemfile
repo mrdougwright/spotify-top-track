@@ -9,4 +9,6 @@ group :development, :test do
   gem 'dotenv'
   gem 'minitest'
   gem 'minitest-reporters'
+  gem 'webmock'
+  gem 'pry'
 end

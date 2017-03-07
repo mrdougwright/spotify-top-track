@@ -1,10 +1,8 @@
 require 'rspotify'
 
 class SpotifyApi
-  attr_reader :client
-
   def initialize
-    @client = RSpotify.authenticate(
+    RSpotify.authenticate(
       ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
   end
 
