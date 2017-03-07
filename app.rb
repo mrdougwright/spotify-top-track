@@ -1,8 +1,11 @@
-require 'dotenv'; Dotenv.load # Load ENV vars
-require 'pry'
-
 require 'sinatra'
 require 'sinatra/multi_route'
+
+configure :development, :test do
+  require 'dotenv'; Dotenv.load # Load ENV vars
+  require 'pry'
+end
+
 require 'json'
 require 'redis'
 

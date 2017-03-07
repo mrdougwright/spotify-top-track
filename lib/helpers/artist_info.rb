@@ -1,8 +1,8 @@
 module ArtistInfo
   def get_artist_info(name)
-    s = SpotifyApi.new
-    artist = s.find_artist(name)
-    track  = s.find_track(artist)
+    spotify = SpotifyApi.new
+    artist  = spotify.find_artist(name)
+    track   = spotify.find_track(artist)
     decorate_artist_data(artist, track)
   end
 
@@ -20,9 +20,9 @@ module ArtistInfo
       track: track&.name,
       image_url: get_image_url(artist),
       popularity: artist&.popularity,
-      genres: artist&.genres,
+      genres: artist&.genres || [],
       followers: artist&.followers['total'],
-      related: artist&.related_artists.map{|a| a['name']},
+      related: artist&.related_artists&.map(&:name),
       spotify_link: artist&.external_urls['spotify']
     }
   end

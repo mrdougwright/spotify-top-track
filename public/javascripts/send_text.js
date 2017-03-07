@@ -1,5 +1,5 @@
 (function() {
-  var form = document.getElementsByTagName('form')[0]
+  var form = document.getElementById('text_form')
   var btn = document.getElementById('submit_button')
   btn.addEventListener('click', function(e){
     e.preventDefault()
