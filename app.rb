@@ -19,13 +19,13 @@ get '/' do
 end
 
 route :get, :post, '/artist' do
-  @artist = get_set_artist(params[:name])
+  @artist = get_set_artist(params['name'])
   erb :artist
 end
 
 post '/send_text' do
   content_type :json
-  artist = get_set_artist(params[:name])
-  @msg_sent = send_text_message(artist[:name], artist[:track], params[:phone])
+  artist = get_set_artist(params['name'])
+  @msg_sent = send_text_message(artist['name'], artist['track'], params['phone'])
   { msg_sent: @msg_sent, artist: artist }.to_json
 end
