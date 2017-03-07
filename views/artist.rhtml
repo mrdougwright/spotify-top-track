@@ -6,13 +6,13 @@
 
   <div class="">
     <div class="fl w-60 pa2 bt bw3">
-      <p>Name: <%= @artist[:name] %></p>
-      <p>Top Track: <%= @artist[:track] %></p>
-      <p>Popularity: <%= @artist[:popularity] %></p>
-      <p>Followers: <%= @artist[:followers] %></p>
-      <p>Genres: <%= @artist[:genres].join(', ') %></p>
+      <p>Name: <%= @artist['name'] %></p>
+      <p>Top Track: <%= @artist['track'] %></p>
+      <p>Popularity: <%= @artist['popularity'] %></p>
+      <p>Followers: <%= @artist['followers'] %></p>
+      <p>Genres: <%= @artist['genres'].join(', ') %></p>
       <p>Related:
-        <% @artist[:related].each do |name| %>
+        <% @artist['related'].each do |name| %>
           <a class="no-underline link dim black b" href="/artist?name=<%=name%>">
             <%= name %>,
           </a>
@@ -21,8 +21,8 @@
     </div>
 
     <div class="fl w-40 pa2 bg-black">
-      <a href="<%= @artist[:spotify_link] %>" target="_blank">
-        <img class="" src="<%= @artist[:image_url] %>" />
+      <a href="<%= @artist['spotify_link'] %>" target="_blank">
+        <img class="" src="<%= @artist['image_url'] %>" />
       </a>
     </div>
   </div>

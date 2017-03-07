@@ -22,7 +22,7 @@ module ArtistInfo
       popularity: artist&.popularity,
       genres: artist&.genres,
       followers: artist&.followers['total'],
-      related: artist&.related_artists.map(&:name),
+      related: artist&.related_artists.map{|a| a['name']},
       spotify_link: artist&.external_urls['spotify']
     }
   end
