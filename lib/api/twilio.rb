@@ -2,6 +2,7 @@ require 'twilio-ruby'
 
 class TwilioApi
   attr_reader :client
+  DEFAULT_FROM = ENV['TWILIO_DEFAULT_FROM']
 
   def initialize
     @client = Twilio::REST::Client.new(
@@ -9,7 +10,7 @@ class TwilioApi
   end
 
 # body = "#{artist.name}'s top track: #{track.name}"
-  def send_message(from, to, body)
+  def send_message(from=DEFAULT_FROM, to, body)
     client.account.messages.create({
       :from => from, :to => to,
       :body => body

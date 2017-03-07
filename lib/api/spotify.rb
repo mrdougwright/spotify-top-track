@@ -11,6 +11,6 @@ class SpotifyApi
   end
 
   def find_track(artist)
-    artist.top_tracks(:US).first
+    artist&.top_tracks(:US)&.first
   end
 end

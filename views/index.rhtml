@@ -1,2 +1,9 @@
-<h1>Hello World</h1>
-<%= @test %>
+<h1>Welcome</h1>
+<p>Please enter an artist name and your phone number to receive a text with the artist's top track.</p>
+<form method="post" action="/artist">
+  <label>Artist Name</label>
+  <input type="text" name="name">
+  <label>Your Phone Number</label>
+  <input type="text" name="phone" placeholder="+1(323) 206-8549">
+  <input id='submit_button' type="submit">
+</form>
