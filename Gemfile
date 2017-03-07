@@ -9,6 +9,7 @@ gem 'twilio-ruby'
 gem 'rspotify'
 gem 'json'
 gem 'redis'
+gem 'rake'
 
 group :development, :test do
   gem 'dotenv'

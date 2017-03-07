@@ -55,6 +55,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (11.1.2)
     redis (3.3.3)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -112,6 +113,7 @@ DEPENDENCIES
   minitest
   minitest-reporters
   pry
+  rake
   redis
   rspec
   rspotify
