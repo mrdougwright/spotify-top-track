@@ -1,9 +1,29 @@
-<h2>Artist</h2>
+<main class="center pa4 pv2">
+  <h2>
+    Artist
+    <a class="fr" href="/">Home</a>
+  </h2>
 
-<div>
-  <h4>Name</h4>
-  <p><%= @artist[:name] %></p>
+  <div class="">
+    <div class="fl w-60 pa2 bt bw3">
+      <p>Name: <%= @artist[:name] %></p>
+      <p>Top Track: <%= @artist[:track] %></p>
+      <p>Popularity: <%= @artist[:popularity] %></p>
+      <p>Followers: <%= @artist[:followers] %></p>
+      <p>Genres: <%= @artist[:genres].join(', ') %></p>
+      <p>Related:
+        <% @artist[:related].each do |name| %>
+          <a class="no-underline link dim black b" href="/artist?name=<%=name%>">
+            <%= name %>,
+          </a>
+        <% end %>
+      </p>
+    </div>
 
-  <h4>Top Track</h4>
-  <p><%= @artist[:track] %></p>
-</div>
+    <div class="fl w-40 pa2 bg-black">
+      <a href="<%= @artist[:spotify_link] %>" target="_blank">
+        <img class="" src="<%= @artist[:image_url] %>" />
+      </a>
+    </div>
+  </div>
+</main>
